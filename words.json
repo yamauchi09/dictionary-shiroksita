@@ -1,13 +1,18 @@
 [
   {
-    "word": "bona",
-    "meaning": "善"
+    "word": "apple",
+    "meaning": "りんご"
   },
   {
-    "word": "chapa",
-    "meaning": "取得、（自力の）達成"
-  }
+    "word": "animal",
+    "meaning": "動物"
+  },
   {
-   "word":"chuka",
-    "meanig":"周り、周辺"
+    "word": "answer",
+    "meaning": "答え"
+  },
+  {
+    "word": "dog",
+    "meaning": "犬"
+  }
 ]
