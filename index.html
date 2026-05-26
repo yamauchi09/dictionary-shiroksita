@@ -8,8 +8,9 @@
 
 <h1>辞書検索</h1>
 
-<input type="text" id="searchBox">
-<button onclick="searchWord()">検索</button>
+<input type="text" id="searchBox" oninput="showSuggestions()">
+
+<div id="suggestions"></div>
 
 <div id="result"></div>
 
