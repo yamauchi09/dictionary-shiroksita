@@ -6,18 +6,41 @@ fetch('./words.json')
     dictionary = data;
   });
 
-function searchWord() {
-  const input = document.getElementById('searchBox').value;
+function showSuggestions() {
+  const input = document
+    .getElementById('searchBox')
+    .value
+    .toLowerCase();
 
-  const result = dictionary.find(
-    item => item.word === input
+  const suggestionsDiv =
+    document.getElementById('suggestions');
+
+  suggestionsDiv.innerHTML = '';
+
+  if (input === '') {
+    return;
+  }
+
+  const matches = dictionary.filter(item =>
+    item.word.toLowerCase().startsWith(input)
   );
 
-  const output = document.getElementById('result');
+  matches.forEach(item => {
+    const div = document.createElement('div');
 
-  if (result) {
-    output.textContent = result.meaning;
-  } else {
-    output.textContent = '見つかりません';
-  }
+    div.textContent =
+      item.word + ' : ' + item.meaning;
+
+    div.onclick = () => {
+      document.getElementById('searchBox').value =
+        item.word;
+
+      document.getElementById('result').textContent =
+        item.meaning;
+
+      suggestionsDiv.innerHTML = '';
+    };
+
+    suggestionsDiv.appendChild(div);
+  });
 }
